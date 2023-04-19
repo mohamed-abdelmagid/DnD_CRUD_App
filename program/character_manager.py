@@ -1,7 +1,7 @@
 from dndresource import Character
 from data_persistence import CharacterPersistence
 
-# TODO: Search character, edit character, delete character.
+# TODO: Edit character, delete character.
 # TODO: Save character after editing the character.
 
 
@@ -24,8 +24,7 @@ class CharacterManager:
         self.save_characters()
 
     def search_character(self, searchname, searchrace):
-        # will search for character based on the DnD character's name or race
-        pass
+        searched_characters = []
 
     def edit_character(self, id, new_name, new_race, new_character_class, new_level):
         # looking at the code now, I need an ID for the characters
