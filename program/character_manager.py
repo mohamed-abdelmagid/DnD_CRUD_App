@@ -41,3 +41,4 @@ class CharacterManager:
         for character in self.characters:
             if character.id == id:
                 self.characters.remove(character)
+                self.save_characters()
