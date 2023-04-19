@@ -10,16 +10,10 @@ class CharacterManager:
         self.characterpersistence = CharacterPersistence(file_path)
         self.characterpersistence.load_characters()
 
-    def load_characters(self):
-        self.characters = self.characterpersistence.load_characters()
-
-    def save_characters(self):
-        self.characterpersistence.save_characters(self.characters)
-
     def create_character(self, id, name, race, character_class, level):
         character = Character(id, name, race, character_class, level)
         self.characters.append(character)
-        self.save_characters()
+        self.characterpersistence.save_characters(self.characters)
 
     def search_character(self, searchname, searchrace):
         searched_characters = []
@@ -35,10 +29,10 @@ class CharacterManager:
                 character.race = new_race
                 character.character_class = new_character_class
                 character.level = new_level
-                self.save_characters()
+                self.characterpersistence.save_characters(self.characters)
 
     def delete_character(self, id):
         for character in self.characters:
             if character.id == id:
                 self.characters.remove(character)
-                self.save_characters()
+                self.characterpersistence(self.characters)
