@@ -8,7 +8,7 @@ class CharacterManager:
     def __init__(self):
         self.characters = []
         self.characterpersistence = CharacterPersistence()
-        self.characterpersistence.load_characters()
+        self.characters = self.characterpersistence.load_characters()
 
     def create_character(self, id, name, race, character_class, level):
         character = Character(id, name, race, character_class, level)
