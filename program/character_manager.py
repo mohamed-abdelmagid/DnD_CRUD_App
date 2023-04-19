@@ -35,6 +35,7 @@ class CharacterManager:
             if character.id == id:
                 character.name = new_name
                 character.race = new_race
+                character.character_class = new_character_class
 
     def delete_character(self, id):
         # will delete character by ID
