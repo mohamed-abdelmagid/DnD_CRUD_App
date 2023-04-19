@@ -5,8 +5,8 @@ class UI:
     def __init__(self):
         self.character_manager = CharacterManager()
 
-    try:
-        def run(self):
+    def run(self):
+        try:
             while True:
                 print("\nMENU")
                 print("1. Create Character")
@@ -56,9 +56,8 @@ class UI:
                     break
                 else:
                     print(f"Incorrect Input: No option with input {choice}")
-    except PermissionError:
-        print("Permission Denied: Try closing the CSV file if it is already open")
-        raise
+        except PermissionError:
+            print("Permission Denied: Try closing the CSV file if it is already open")
 
 
 prog = UI()

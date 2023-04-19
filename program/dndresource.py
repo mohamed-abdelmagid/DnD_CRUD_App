@@ -1,4 +1,3 @@
-# resource for DnD character list
 class Character:
     def __init__(self, id, name, race, character_class, level):
         self.id = id

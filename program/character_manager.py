@@ -1,8 +1,6 @@
 from dndresource import Character
 from data_persistence import CharacterPersistence
 
-# TODO: Delete character.
-
 
 class CharacterManager:
     def __init__(self):

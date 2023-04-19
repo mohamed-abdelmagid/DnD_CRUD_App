@@ -25,8 +25,9 @@ class CharacterPersistence:
                 character = Character(id, name, race, character_class, level)
                 characters.append(character)
         return characters
-    try:
-        def save_characters(self, characters):
+
+    def save_characters(self, characters):
+        try:
             with open(self.file_path, mode='w', newline='') as file:
                 writer = csv.writer(file)
                 if len(characters) > 0:
@@ -34,6 +35,7 @@ class CharacterPersistence:
                     for character in characters:
                         writer.writerow([character.id, character.name, character.race,
                                         character.character_class, character.level])
-    except PermissionError:
-        print("Permission Denied: Try closing the CSV file if it is already open")
-        raise
+        except PermissionError:
+            print("Permission Denied: Try closing the CSV file if it is already open")
+        except Exception as e:
+            print("An error occurred while saving characters:", e)
