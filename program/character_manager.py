@@ -1,15 +1,23 @@
-# will manage the DnD character list
 from dndresource import Character
-# TODO: Make it so it calls the data_persistence module to save a character after creating
+from data_persistence import CharacterPersistence
 
 
 class CharacterManager:
-    def __init__(self):
+    def __init__(self, file_path):
         self.characters = []
+        self.characterpersistence = CharacterPersistence(file_path)
+        self.characterpersistence.load_characters()
+
+    def load_characters(self):
+        self.characters = self.characterpersistence.load_characters()
+
+    def save_characters(self):
+        self.characterpersistence.save_characters(self.characters)
 
     def create_character(self, id, name, race, character_class, level):
         character = Character(id, name, race, character_class, level)
         self.characters.append(character)
+        self.save_characters()
 
     def search_character(self, searchname, searchrace):
         # will search for character based on the DnD character's name or race
