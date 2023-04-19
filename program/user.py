@@ -50,12 +50,15 @@ class UI:
                         self.character_manager.delete_character(id)
                     elif confirmation == ("n" or "no"):
                         print("Character has not been deleted.")
+                    else:
+                        print("Incorrect input. Please type (y)es or (n)o")
                 elif choice == "5":
                     break
                 else:
                     print(f"Incorrect Input: No option with input {choice}")
     except PermissionError:
         print("Permission Denied: Try closing the CSV file if it is already open")
+        raise
 
 
 prog = UI()
