@@ -23,7 +23,7 @@ class CharacterPersistence:
     def save_characters(self, characters):
         with open(self.file_path, mode='w', newline='') as file:
             writer = csv.writer(file)
-            write.writerow(["ID", "Name", "Race", "Class", "Level"])
+            writer.writerow(["ID", "Name", "Race", "Class", "Level"])
             for character in characters:
                 writer.writerow([character.id, character.name, character.race,
                                 character.character_class, character.level])
