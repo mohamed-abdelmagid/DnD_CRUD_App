@@ -44,14 +44,13 @@ class UI:
                 self.character_manager.edit_character(
                     id, new_name, new_race, new_character_class, new_level)
             elif choice == "4":
-                id = input("Enter ID of character")
+                id = input("Enter ID of character: ")
                 confirmation = input(
                     "Are you sure you want to delete this character?(y/n): ").lower()
-                if confirmation == "y" or "yes":
+                if confirmation == ("y" or "yes"):
                     self.character_manager.delete_character(id)
-                if confirmation == "n" or "no":
-                    # pass for now
-                    pass
+                elif confirmation == ("n" or "no"):
+                    print("Character has not been deleted.")
             elif choice == "5":
                 break
 
