@@ -1,4 +1,3 @@
-# program and user interaction will be here
 from character_manager import CharacterManager
 
 
@@ -17,7 +16,6 @@ class UI:
             choice = input("Enter choice: ")
             if choice == "1":
                 id = input("Enter ID: ")
-                # not yet implemented in character_manager
                 name = input("Enter name: ")
                 race = input("Enter race: ")
                 character_class = input("Enter class: ")
@@ -53,6 +51,8 @@ class UI:
                     print("Character has not been deleted.")
             elif choice == "5":
                 break
+            else:
+                print(f"Incorrect Input: No option with input {choice}")
 
 
 prog = UI()
