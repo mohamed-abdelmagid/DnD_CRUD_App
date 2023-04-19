@@ -1,6 +1,9 @@
 from dndresource import Character
 from data_persistence import CharacterPersistence
 
+# TODO: Search character, edit character, delete character.
+# TODO: Save character after editing the character.
+
 
 class CharacterManager:
     def __init__(self, file_path):
@@ -10,6 +13,7 @@ class CharacterManager:
 
     def load_characters(self):
         self.characters = self.characterpersistence.load_characters()
+        # loads the characters from the CSV file specified by the file_path argument, and stores them in the characters
 
     def save_characters(self):
         self.characterpersistence.save_characters(self.characters)
