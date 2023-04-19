@@ -31,9 +31,9 @@ class CharacterManager:
         return searched_characters
 
     def edit_character(self, id, new_name, new_race, new_character_class, new_level):
-        # looking at the code now, I need an ID for the characters
-        # this will edit a character to change name, race, class, or level
-        pass
+        for character in self.characters:
+            if character.id == id:
+                character.name = new_name
 
     def delete_character(self, id):
         # will delete character by ID
