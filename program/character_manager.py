@@ -37,6 +37,7 @@ class CharacterManager:
                 character.race = new_race
                 character.character_class = new_character_class
                 character.level = new_level
+                self.save_characters()
 
     def delete_character(self, id):
         # will delete character by ID
