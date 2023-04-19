@@ -25,6 +25,10 @@ class CharacterManager:
 
     def search_character(self, searchname, searchrace):
         searched_characters = []
+        for character in self.characters:
+            if character.name == searchname and character.race == searchrace:
+                searched_characters.append(character)
+        return searched_characters
 
     def edit_character(self, id, new_name, new_race, new_character_class, new_level):
         # looking at the code now, I need an ID for the characters
