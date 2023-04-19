@@ -5,9 +5,9 @@ from data_persistence import CharacterPersistence
 
 
 class CharacterManager:
-    def __init__(self, file_path):
+    def __init__(self):
         self.characters = []
-        self.characterpersistence = CharacterPersistence(file_path)
+        self.characterpersistence = CharacterPersistence()
         self.characterpersistence.load_characters()
 
     def create_character(self, id, name, race, character_class, level):
@@ -35,4 +35,4 @@ class CharacterManager:
         for character in self.characters:
             if character.id == id:
                 self.characters.remove(character)
-                self.characterpersistence(self.characters)
+                self.characterpersistence.save_characters(self.characters)
